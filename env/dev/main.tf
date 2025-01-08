@@ -9,12 +9,6 @@ module "vpc" {
   public_subnet_02_cidr  = var.public_subnet_02_cidr
 }
 
-module "s3" {
-  source       = "../../modules/s3"
-  environment  = var.environment
-  project_name = var.project_name
-}
-
 module "securitygroup" {
   source       = "../../modules/securitygroup"
   vpc_id       = module.vpc.vpc_id
@@ -29,7 +23,6 @@ module "ecs" {
   private_subnet_02_id = module.vpc.private_subnet_02_id
   alb_tg_arn           = module.alb.alb_tg_arn
   web_sg_id            = module.securitygroup.web_sg_id
-  env_file_bucket_arn  = module.s3.env_file_bucket_arn
   ecr_image_name       = var.ecr_image_name
 }
 
