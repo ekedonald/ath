@@ -1,0 +1,11 @@
+variable "region" {}
+variable "vpc_cidr" {}
+variable "project_name" {}
+variable "private_subnet_01_cidr" {}
+variable "private_subnet_02_cidr" {}
+variable "public_subnet_01_cidr" {}
+variable "public_subnet_02_cidr" {}
+variable "environment" {}
+variable "cloudflare_api_token" {}
+variable "cloudflare_zone_id" {}
+variable "ecr_image_name" {}
